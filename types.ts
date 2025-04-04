@@ -1,4 +1,4 @@
-export interface OMDbMovie {
+export interface MovieProps {
     Title?: string;
     Year?: string;
     Rated?: string;
