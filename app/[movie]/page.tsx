@@ -51,7 +51,17 @@ export default async function Movie({
           )}
         </>
       )}
-      {data.Response === "False" && <p>Something went wrong, failed request</p>}
+      {data.Response === "False" && (
+        <div className="m-auto bg-[#fefae0] border border-dashed rounded-lg p-6">
+          <h2 className="font-bold text-2xl">Uh Oh</h2>
+          <h3 className="text-xl">Something went wrong:</h3>
+          {data.Error && (
+            <p>
+              <span className="font-bold">Error:</span> {data.Error}
+            </p>
+          )}
+        </div>
+      )}
       <Link
         href="/"
         className="bg-[#d4a373] text-black p-2 rounded text-center font-bold hover:bg-[#ccd5ae]"
